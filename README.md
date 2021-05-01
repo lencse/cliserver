@@ -21,13 +21,13 @@ With CLIserver, there's no need to install anything in the project or to change 
 You can use CLIserver directly with [`npx`](https://www.npmjs.com/package/npx).
 
 ```sh
-npx cliserver serve . -l
+npx -p @lencse/cliserver cliserver serve . -
 ```
 
 ### Global installation
 
 ```sh
-npm install -g cliserver
+npm install -g @lencse/cliserver
 cliserver serve . -l
 ```
 
@@ -36,7 +36,7 @@ cliserver serve . -l
 In a `node.js` project you can install CLIserver locally and include it in your [development scripts](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#scripts).
 
 ```sh
-npm install --save-dev cliserver
+npm install --save-dev @lencse/cliserver
 ```
 
 `package.json`:
