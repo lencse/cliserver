@@ -1,0 +1,8 @@
+/node_modules
+/logs
+/cypress
+/.tmp
+/.dev.args
+/.github
+/test
+/build/test

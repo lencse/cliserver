@@ -1,0 +1,68 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 15.x, 16.x]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/cache@v2
+      id: yarn-build-cache
+      with:
+        path: |
+          node_modules
+          ~/.cache/Cypress
+        key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node_modules-build-
+
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build
+      run: make
+
+    - name: Test
+      run: make test
+
+    - name: Test compiled code
+      run: make test_compiled
+
+    - name: E2E Test
+      run: make e2e_test
+
+    - name: Lint
+      run: make lint
+
+    # - name: Send coverage report
+    #   if: ${{ matrix.node-version == '14.x' }}
+    #   run: node_modules/.bin/coveralls < logs/jest/lcov.info
+    #   env:
+    #     COVERALLS_SERVICE_NAME: github-actions
+    #     COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+    #     COVERALLS_GIT_BRANCH: ${{ steps.extract_branch.outputs.branch }}
+
+    - name: Cypress run
+      uses: cypress-io/github-action@v2
+      with:
+        build: make
+        start: make test_servers

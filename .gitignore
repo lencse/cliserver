@@ -1,0 +1,7 @@
+/build
+/node_modules
+/logs
+/cypress/screenshots/*
+/cypress/videos/*
+/.tmp
+/.dev.args

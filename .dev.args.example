@@ -1,0 +1,1 @@
+serve cypress/fixtures/dir1 -p 7201 -l

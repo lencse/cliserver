@@ -1,0 +1,61 @@
+{
+    "name": "@lencse/cliserver",
+    "version": "0.1.0",
+    "main": "index.js",
+    "author": "Lencse <lokilevente@lokilevente.hu> (https://lencse.io)",
+    "license": "MIT",
+    "homepage": "https://github.com/lencse/cliserver#readme",
+    "scripts": {
+        "prepublishOnly": "make"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lencse/cliserver"
+    },
+    "bugs": {
+        "url": "https://github.com/lencse/cliserver/issues"
+    },
+    "keywords": [
+        "server",
+        "static server",
+        "livereload",
+        "cli",
+        "command line"
+    ],
+    "devDependencies": {
+        "@types/cli-table": "^0.3.0",
+        "@types/expand-tilde": "^2.0.0",
+        "@types/jest": "^26.0.22",
+        "@types/koa": "^2.13.1",
+        "@types/koa-router": "^7.4.1",
+        "@types/koa-static": "^4.0.1",
+        "@types/livereload": "^0.9.0",
+        "@typescript-eslint/eslint-plugin": "^4.22.0",
+        "@typescript-eslint/parser": "^4.22.0",
+        "concurrently": "^6.0.1",
+        "cypress": "^7.1.0",
+        "eslint": "^7.24.0",
+        "eslint-config-standard-with-typescript": "^20.0.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^4.3.1",
+        "jest": "^26.6.3",
+        "nodemon": "^2.0.7",
+        "ts-jest": "^26.5.4",
+        "typescript": "^4.2.4"
+    },
+    "bin": {
+        "cliserver": "./cli.js"
+    },
+    "dependencies": {
+        "chalk": "^3.0.0",
+        "cli-table": "^0.3.6",
+        "expand-tilde": "^2.0.2",
+        "koa": "^2.13.1",
+        "koa-logger": "^3.2.1",
+        "koa-router": "^10.0.0",
+        "koa-static": "^5.0.0",
+        "livereload": "^0.9.3",
+        "yargs": "^16.2.0"
+    }
+}

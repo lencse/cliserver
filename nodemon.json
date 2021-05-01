@@ -1,0 +1,8 @@
+{
+    "ignore": [
+        "src",
+        "logs",
+        "cypress"
+    ],
+    "ext": "js"
+}
