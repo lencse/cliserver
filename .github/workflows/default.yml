@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 15.x, 16.x]
+        node-version: [10.x, 11.x, 12.x, 13.x, 14.x, 15.x, 16.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -61,8 +61,8 @@ jobs:
     #     COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
     #     COVERALLS_GIT_BRANCH: ${{ steps.extract_branch.outputs.branch }}
 
-    - name: Cypress run
-      uses: cypress-io/github-action@v2
-      with:
-        build: make
-        start: make test_servers
+    # - name: Cypress run
+    #   uses: cypress-io/github-action@v2
+    #   with:
+    #     build: make
+    #     start: make test_servers
