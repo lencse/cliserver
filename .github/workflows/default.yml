@@ -1,4 +1,4 @@
-name: Build and test
+name: CI
 
 on:
   push:
@@ -53,13 +53,13 @@ jobs:
     - name: Lint
       run: make lint
 
-    # - name: Send coverage report
-    #   if: ${{ matrix.node-version == '14.x' }}
-    #   run: node_modules/.bin/coveralls < logs/jest/lcov.info
-    #   env:
-    #     COVERALLS_SERVICE_NAME: github-actions
-    #     COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-    #     COVERALLS_GIT_BRANCH: ${{ steps.extract_branch.outputs.branch }}
+    - name: Send coverage report
+      if: ${{ matrix.node-version == '16.x' }}
+      run: node_modules/.bin/coveralls < logs/jest/lcov.info
+      env:
+        COVERALLS_SERVICE_NAME: github-actions
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        COVERALLS_GIT_BRANCH: ${{ steps.extract_branch.outputs.branch }}
 
     # - name: Cypress run
     #   uses: cypress-io/github-action@v2
