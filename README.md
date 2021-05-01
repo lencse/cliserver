@@ -1,6 +1,7 @@
 # CLIserver
 
 [![Node.js CI](https://github.com/lencse/cliserver/actions/workflows/default.yml/badge.svg)](https://github.com/lencse/cliserver/actions)
+[![npm](https://img.shields.io/npm/v/@lencse/cliserver)](https://www.npmjs.com/package/@lencse/cliserver)
 [![Coverage Status](https://coveralls.io/repos/github/lencse/cliserver/badge.svg?branch=main)](https://coveralls.io/github/lencse/cliserver?branch=main)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=lencse_cliserver&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=lencse_cliserver)
 
@@ -21,7 +22,7 @@ With CLIserver, there's no need to install anything in the project or to change 
 You can use CLIserver directly with [`npx`](https://www.npmjs.com/package/npx).
 
 ```sh
-npx -p @lencse/cliserver cliserver serve . -
+npx -p @lencse/cliserver cliserver serve . -l
 ```
 
 ### Global installation
