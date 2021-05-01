@@ -1,6 +1,6 @@
 {
     "name": "@lencse/cliserver",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "index.js",
     "author": "Lencse <lokilevente@lokilevente.hu> (https://lencse.io)",
     "license": "MIT",
