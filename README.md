@@ -141,3 +141,4 @@ Please make sure to update tests as appropriate.
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
+- The racoon svg in the example is from [SVG Repo](https://www.svgrepo.com/svg/191426/raccoon).
